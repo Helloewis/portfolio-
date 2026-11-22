@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arya Tandon — Mechanical Engineering Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+    }
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .blueprint-grid {
+      background-image:
+        linear-gradient(to right, rgba(37, 99, 235, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+    .modal-enter {
+      animation: modalFadeIn 0.2s ease-out forwards;
+    }
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.97) translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-blue-100 selection:text-blue-900">
+
+  <!-- Sticky Navigation Bar -->
+  <header class="sticky top-0 z-40 glass-nav border-b border-slate-200/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#hero" class="flex items-center gap-2.5 group">
+          <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white font-bold text-sm flex items-center justify-center shadow-sm group-hover:shadow transition-shadow">
+            AT
+          </span>
+          <div class="leading-tight">
+            <span class="font-bold text-slate-900 tracking-tight block">Arya Tandon</span>
+            <span class="text-[11px] font-medium text-slate-500 hidden sm:block">Mechanical Engineering</span>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-1">
+          <a href="#about" class="px-3.5 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50/70 transition-colors">About</a>
+          <a href="#projects" class="px-3.5 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50/70 transition-colors">Projects</a>
+          <a href="#skills" class="px-3.5 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50/70 transition-colors">Skills</a>
+          <a href="#contact" class="ml-2 px-4 py-2 rounded-lg text-sm font-semibold bg-blue-600 text-white hover:bg-blue-700 shadow-sm transition-all">Contact</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" type="button" aria-label="Toggle navigation menu" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white/95 px-4 py-3 space-y-1">
+      <a href="#about" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-600">About</a>
+      <a href="#projects" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-600">Projects</a>
+      <a href="#skills" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-600">Skills</a>
+      <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-semibold text-blue-600 hover:bg-blue-50">Contact</a>
+    </div>
+  </header>
+
+  <!-- Hero Section with Light Visually Striking Background Graphic -->
+  <section id="hero" class="relative overflow-hidden border-b border-slate-200/80 bg-gradient-to-br from-slate-50 via-blue-50/50 to-amber-50/40 blueprint-grid">
+    <!-- Decorative Aerospace & Radar SVG Background Graphic -->
+    <svg class="absolute inset-0 w-full h-full pointer-events-none select-none opacity-75" viewBox="0 0 1440 640" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <radialGradient id="heroGlow" cx="78%" cy="35%" r="55%">
+          <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.16" />
+          <stop offset="55%" stop-color="#F59E0B" stop-opacity="0.08" />
+          <stop offset="100%" stop-color="#F8FAFC" stop-opacity="0" />
+        </radialGradient>
+      </defs>
+      <rect width="1440" height="640" fill="url(#heroGlow)" />
+      <!-- Concentric Radar Arcs -->
+      <circle cx="1120" cy="240" r="110" stroke="#2563EB" stroke-opacity="0.18" stroke-width="1.25" stroke-dasharray="6 6" />
+      <circle cx="1120" cy="240" r="190" stroke="#2563EB" stroke-opacity="0.14" stroke-width="1.25" />
+      <circle cx="1120" cy="240" r="280" stroke="#0EA5E9" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="4 8" />
+      <circle cx="1120" cy="240" r="370" stroke="#EA580C" stroke-opacity="0.10" stroke-width="1" />
+      <!-- Aerospace Trajectory Curves -->
+      <path d="M-40 480 C 260 420, 520 220, 860 250 C 1080 270, 1240 160, 1480 90" stroke="#2563EB" stroke-opacity="0.22" stroke-width="2" />
+      <path d="M-40 520 C 300 460, 580 280, 900 300 C 1120 315, 1270 210, 1480 150" stroke="#EA580C" stroke-opacity="0.18" stroke-width="1.5" stroke-dasharray="5 5" />
+      <!-- Acoustic / Frequency Wave Accent -->
+      <path d="M760 540 Q 820 490, 880 540 T 1000 540 T 1120 540 T 1240 540 T 1360 540" stroke="#4F46E5" stroke-opacity="0.16" stroke-width="1.5" />
+      <circle cx="1120" cy="240" r="6" fill="#2563EB" fill-opacity="0.45" />
+      <circle cx="860" cy="250" r="4" fill="#EA580C" fill-opacity="0.45" />
+    </svg>
+
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-28">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 border border-blue-200/80 text-blue-700 text-xs sm:text-sm font-semibold mb-6 shadow-sm">
+          <i data-lucide="graduation-cap" class="w-4 h-4 text-blue-600"></i>
+          <span>Manav Rachna University &bull; Studying Mechanical Engineering</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
+          Arya Tandon
+        </h1>
+
+        <p class="mt-5 text-base sm:text-lg text-slate-700 leading-relaxed max-w-2xl">
+          Mechanical Engineering undergraduate focused on hands-on hardware prototyping, compact sensor modules, thermal-resilient concept engineering, custom furniture joinery, and legacy audio hardware modification—paired with moderate CAD, active Python learning, and a vision in <span class="font-semibold text-blue-700">Aerospace</span> and <span class="font-semibold text-amber-700">Music</span>.
+        </p>
+
+        <!-- Skill Badges -->
+        <div class="mt-7 flex flex-wrap gap-2.5">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-white/95 border border-slate-200 text-slate-700 shadow-sm">
+            <i data-lucide="radar" class="w-3.5 h-3.5 text-blue-600"></i> Compact Radar Module
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-white/95 border border-slate-200 text-slate-700 shadow-sm">
+            <i data-lucide="thermometer" class="w-3.5 h-3.5 text-amber-600"></i> VF Thermal Concept
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-white/95 border border-slate-200 text-slate-700 shadow-sm">
+            <i data-lucide="cpu" class="w-3.5 h-3.5 text-rose-600"></i> Hardware &amp; iPod Modding
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-white/95 border border-slate-200 text-slate-700 shadow-sm">
+            <i data-lucide="hammer" class="w-3.5 h-3.5 text-teal-600"></i> Structural Joinery
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-white/95 border border-slate-200 text-slate-700 shadow-sm">
+            <i data-lucide="box" class="w-3.5 h-3.5 text-indigo-600"></i> CAD (Moderate)
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-white/95 border border-slate-200 text-slate-700 shadow-sm">
+            <i data-lucide="code-2" class="w-3.5 h-3.5 text-emerald-600"></i> Python (Learning)
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-white/95 border border-slate-200 text-slate-700 shadow-sm">
+            <i data-lucide="plane" class="w-3.5 h-3.5 text-sky-600"></i> Aerospace &amp; Music Vision
+          </span>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="mt-9 flex flex-wrap items-center gap-3.5">
+          <a href="#projects" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-blue-600 text-white font-semibold text-sm shadow-md shadow-blue-600/20 hover:bg-blue-700 transition-all">
+            <span>View Featured Projects</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+          <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white border border-slate-300 text-slate-800 font-semibold text-sm hover:border-blue-400 hover:text-blue-700 shadow-sm transition-all">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span>Get in Touch</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about" class="py-16 sm:py-20 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <div class="lg:col-span-7">
+          <p class="text-xs font-bold uppercase tracking-widest text-blue-600 mb-2">About Me</p>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+            From bench-level hardware tinkering to conceptual &amp; structural design
+          </h2>
+          <div class="mt-5 space-y-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p>
+              I am <strong class="text-slate-900 font-semibold">Arya Tandon</strong>, a Mechanical Engineering student at <strong class="text-slate-900 font-semibold">Manav Rachna University</strong>. My engineering work spans both physical builds and conceptual system studies: packaging a compact sensor-based radar module, executing custom structural furniture builds from dimensional layout to assembly, and conceptualizing a 6-foot tree model engineered around VF-grade material to withstand varying temperatures.
+            </p>
+            <p>
+              Beyond mechanical structures, I regularly tinker with electronic hardware and perform component-level modifications on legacy audio devices—such as retrofitting classic iPods with upgraded storage and power architectures. I maintain moderate CAD proficiency, am actively learning Python, and aim to channel this multidisciplinary toolkit into <strong class="text-slate-900 font-semibold">Aerospace</strong> systems or <strong class="text-slate-900 font-semibold">Music</strong> engineering as an avid listener.
+            </p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+          <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+              <i data-lucide="landmark" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-slate-900 text-sm">Academic Base</h3>
+              <p class="text-xs sm:text-sm text-slate-600 mt-1">Studying Mechanical Engineering at Manav Rachna University.</p>
+            </div>
+          </div>
+
+          <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
+              <i data-lucide="wrench" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-slate-900 text-sm">Hardware, Concepts &amp; Fabrication</h3>
+              <p class="text-xs sm:text-sm text-slate-600 mt-1">Radar sensor modules, VF thermal concept engineering, custom furniture joinery, and iPod hardware retrofits.</p>
+            </div>
+          </div>
+
+          <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm flex items-start gap-4 sm:col-span-2 lg:col-span-1">
+            <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
+              <i data-lucide="music" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-slate-900 text-sm">Future Vision</h3>
+              <p class="text-xs sm:text-sm text-slate-600 mt-1">Combining moderate CAD and Python learning toward Aerospace systems or Music hardware.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects Grid -->
+  <section id="projects" class="py-16 sm:py-20 bg-white border-y border-slate-200/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-widest text-blue-600 mb-2">Featured Projects</p>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">Selected Builds &amp; Concept Studies</h2>
+        </div>
+        <p class="text-sm text-slate-500">Click any project card to inspect full technical specifications.</p>
+      </div>
+
+      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Filterable Technical Skills Section -->
+  <section id="skills" class="py-16 sm:py-20 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-widest text-blue-600 mb-2">Capabilities</p>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">Technical Skills &amp; Focus Areas</h2>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div id="skill-filters" class="flex flex-wrap gap-2" role="tablist" aria-label="Filter skills by category">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between mb-5">
+        <p id="skills-count" class="text-xs font-medium text-slate-500"></p>
+      </div>
+
+      <div id="skills-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 sm:py-20 bg-white border-t border-slate-200/80">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-50 via-white to-amber-50/70 border border-blue-200/80 p-8 sm:p-12 shadow-sm">
+        <div class="max-w-2xl">
+          <p class="text-xs font-bold uppercase tracking-widest text-blue-600 mb-2">Contact</p>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">Let’s Connect</h2>
+          <p class="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
+            Open to mechanical engineering collaborations, hardware prototyping, aerospace discussions, and music-tech conversations.
+          </p>
+
+          <div class="mt-7 flex flex-col sm:flex-row sm:items-center gap-3.5">
+            <a
+              href="mailto:aryatandon680@gmail.com"
+              class="inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-blue-600 text-white font-semibold text-sm shadow-md shadow-blue-600/20 hover:bg-blue-700 transition-all"
+            >
+              <i data-lucide="mail" class="w-4 h-4"></i>
+              <span>aryatandon680@gmail.com</span>
+            </a>
+
+            <button
+              id="copy-contact-btn"
+              type="button"
+              class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white border border-slate-300 text-slate-800 font-semibold text-sm hover:border-blue-400 hover:text-blue-700 shadow-sm transition-all"
+            >
+              <i data-lucide="copy" class="w-4 h-4"></i>
+              <span id="copy-btn-label">Copy Contact Details</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-slate-50 border-t border-slate-200/80 text-center text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto px-4">
+      <p>&copy; <span id="year"></span> Arya Tandon &bull; Mechanical Engineering, Manav Rachna University</p>
+    </div>
+  </footer>
+
+  <!-- Project Technical Specs Modal -->
+  <div id="project-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div id="modal-panel" class="modal-enter relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white rounded-3xl border border-slate-200 shadow-2xl">
+      <button
+        id="modal-close-btn"
+        type="button"
+        aria-label="Close technical specs modal"
+        class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-white/90 border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center justify-center shadow-sm transition-colors"
+      >
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <div id="modal-media" class="w-full h-52 sm:h-60 bg-slate-100 overflow-hidden border-b border-slate-200"></div>
+
+      <div class="p-6 sm:p-8">
+        <div class="flex flex-wrap items-center gap-2 mb-2">
+          <span id="modal-category" class="px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200/80"></span>
+          <span id="modal-status" class="px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700"></span>
+        </div>
+
+        <h3 id="modal-title" class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight"></h3>
+        <p id="modal-description" class="mt-2.5 text-sm sm:text-base text-slate-600 leading-relaxed"></p>
+
+        <div class="mt-6">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">Technical Specifications</h4>
+          <div id="modal-specs" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+        </div>
+
+        <div class="mt-6 pt-5 border-t border-slate-200 flex justify-end">
+          <button
+            id="modal-done-btn"
+            type="button"
+            class="px-5 py-2.5 rounded-xl bg-slate-900 text-white text-sm font-semibold hover:bg-slate-800 transition-colors"
+          >
+            Close Specs
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- In-page Toast Notification -->
+  <div id="toast" class="hidden fixed bottom-5 right-5 z-50 flex items-center gap-2.5 px-4 py-3 rounded-xl bg-slate-900 text-white text-sm font-medium shadow-lg">
+    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+    <span id="toast-message">Contact details copied to clipboard!</span>
+  </div>
+
+  <script>
+    const projects = [
+      {
+        id: 'radar-module',
+        title: 'Compact Sensor-Based Radar Module',
+        category: 'Hardware & Sensors',
+        status: 'Compact Prototype',
+        visualType: 'radar',
+        summary: 'A compact, small-footprint radar-based detection module built using sensor hardware for short-range sensing.',
+        details: 'Designed around a miniature, space-conscious footprint, this radar-based module integrates sensor hardware to detect nearby objects and motion reliably while keeping mechanical packaging tight and portable.',
+        specs: [
+          { label: 'Form Factor', value: 'Compact & Small-Footprint' },
+          { label: 'Core Hardware', value: 'Sensor-Based Radar Module' },
+          { label: 'Primary Function', value: 'Short-Range Object & Motion Sensing' },
+          { label: 'Engineering Focus', value: 'Tight Packaging & Sensor Integration' }
+        ]
+      },
+      {
+        id: 'tree-model-6ft',
+        title: '6-Foot Multi-Temperature Tree Model (Concept)',
+        category: 'Materials & Structures',
+        status: 'Concept / Thought Project',
+        visualType: 'tree',
+        summary: 'A conceptual 6 ft structural tree model designed around VF-grade material to withstand varying temperatures.',
+        details: 'Developed as a conceptual engineering thought project (not physically constructed), this 6-foot structural tree design explores how VF-grade temperature-resilient materials can maintain structural integrity and stability across varying thermal conditions.',
+        specs: [
+          { label: 'Project Stage', value: 'Conceptual / Thought Project' },
+          { label: 'Target Scale', value: '6 Feet (Conceptual Design)' },
+          { label: 'Material System', value: 'VF Temperature-Resistant Material' },
+          { label: 'Thermal & Structural Focus', value: 'Thermal Endurance & Load Stability' }
+        ]
+      },
+      {
+        id: 'ipod-hardware-mod',
+        title: 'Legacy iPod Hardware Modification & Retrofit',
+        category: 'Consumer Electronics & Audio',
+        status: 'Hardware Mod',
+        visualType: 'ipod',
+        summary: 'Precision teardown and internal hardware modification of classic iPod units for modern storage and power reliability.',
+        details: 'Applying bench-level electronics skills to restore and upgrade legacy portable audio hardware: replacing aging mechanical drives with solid-state flash adapters, retrofitting high-capacity batteries, and executing clean chassis reassembly.',
+        specs: [
+          { label: 'Storage Architecture', value: 'Solid-State Flash Retrofit' },
+          { label: 'Power Subsystem', value: 'High-Capacity Battery Upgrade' },
+          { label: 'Mechanical Scope', value: 'Precision Enclosure Teardown & Fitment' },
+          { label: 'Domain Link', value: 'Portable Audio Hardware & Music' }
+        ]
+      },
+      {
+        id: 'custom-furniture-build',
+        title: 'Custom Structural Furniture Fabrication',
+        category: 'Mechanical Joinery & Fabrication',
+        status: 'Workshop Build',
+        visualType: 'furniture',
+        summary: 'End-to-end design and fabrication of custom furniture focusing on load-bearing joinery and dimensional accuracy.',
+        details: 'Translating functional ergonomics into durable physical furniture—covering dimensional planning, structural frame geometry, precision cutting, rigid joinery, and surface finishing.',
+        specs: [
+          { label: 'Design Scope', value: 'Ergonomic & Dimensional Layout' },
+          { label: 'Structural Focus', value: 'Load-Bearing Frame & Joinery' },
+          { label: 'Fabrication', value: 'Precision Cutting, Assembly & Finishing' },
+          { label: 'CAD Alignment', value: 'Moderate Spatial & Part Modeling' }
+        ]
+      }
+    ];
+
+    const skills = [
+      {
+        name: 'CAD Modeling',
+        category: 'Mechanical & CAD',
+        level: 'Moderate',
+        description: '3D part modeling, spatial layout, and mechanical assembly design.',
+        icon: 'box',
+        accent: 'blue'
+      },
+      {
+        name: 'Structural Joinery & Furniture',
+        category: 'Mechanical & CAD',
+        level: 'Hands-On',
+        description: 'Load-bearing frame design, dimensional tolerancing, and custom fabrication.',
+        icon: 'hammer',
+        accent: 'blue'
+      },
+      {
+        name: 'Sensor-Based Radar Integration',
+        category: 'Hardware & Materials',
+        level: 'Project Built',
+        description: 'Packaging compact, small-scale radar sensor modules for proximity detection.',
+        icon: 'radar',
+        accent: 'amber'
+      },
+      {
+        name: 'VF Thermal Material Concepting',
+        category: 'Hardware & Materials',
+        level: 'Thought Project',
+        description: 'Conceptualizing 6 ft structural designs with VF material rated for varying temperatures.',
+        icon: 'thermometer',
+        accent: 'amber'
+      },
+      {
+        name: 'Hardware Tinkering & Diagnostics',
+        category: 'Hardware & Materials',
+        level: 'Bench-Level',
+        description: 'Component-level troubleshooting, circuit assembly, and mechanical-electrical integration.',
+        icon: 'cpu',
+        accent: 'rose'
+      },
+      {
+        name: 'Legacy Electronics Modding (iPod)',
+        category: 'Hardware & Materials',
+        level: 'Hardware Retrofit',
+        description: 'Flash-storage conversions, battery upgrades, and precision chassis reassembly.',
+        icon: 'headphones',
+        accent: 'rose'
+      },
+      {
+        name: 'Python Programming',
+        category: 'Software & Vision',
+        level: 'Learning',
+        description: 'Currently learning Python for engineering calculations, automation, and logic.',
+        icon: 'code-2',
+        accent: 'emerald'
+      },
+      {
+        name: 'Aerospace & Music Vision',
+        category: 'Software & Vision',
+        level: 'Career Focus',
+        description: 'Aiming toward aerospace engineering or music systems as an avid listener.',
+        icon: 'plane',
+        accent: 'indigo'
+      }
+    ];
+
+    const categories = ['All', 'Mechanical & CAD', 'Hardware & Materials', 'Software & Vision'];
+    let activeCategory = 'All';
+
+    const projectsGrid = document.getElementById('projects-grid');
+    const skillFiltersEl = document.getElementById('skill-filters');
+    const skillsGrid = document.getElementById('skills-grid');
+    const skillsCount = document.getElementById('skills-count');
+    const modal = document.getElementById('project-modal');
+    const modalMedia = document.getElementById('modal-media');
+    const modalCategory = document.getElementById('modal-category');
+    const modalStatus = document.getElementById('modal-status');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+    const modalSpecs = document.getElementById('modal-specs');
+
+    function renderProjectVisual(type) {
+      if (type === 'radar') {
+        return `
+          <div class="w-full h-full bg-gradient-to-br from-blue-50 via-sky-50 to-indigo-100/70 flex items-center justify-center p-6">
+            <svg viewBox="0 0 320 180" class="w-full h-full max-w-[260px]" fill="none" aria-hidden="true">
+              <circle cx="160" cy="90" r="68" stroke="#2563EB" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="5 5"/>
+              <circle cx="160" cy="90" r="46" stroke="#2563EB" stroke-opacity="0.45" stroke-width="1.5"/>
+              <circle cx="160" cy="90" r="24" stroke="#2563EB" stroke-opacity="0.7" stroke-width="1.5"/>
+              <rect x="136" y="70" width="48" height="40" rx="6" fill="#0F172A"/>
+              <rect x="144" y="77" width="14" height="12" rx="2" fill="#F59E0B"/>
+              <rect x="162" y="77" width="14" height="12" rx="2" fill="#F59E0B"/>
+              <circle cx="204" cy="54" r="5" fill="#EA580C"/>
+            </svg>
+          </div>
+        `;
+      }
+      if (type === 'tree') {
+        return `
+          <div class="w-full h-full bg-gradient-to-br from-amber-50 via-slate-50 to-emerald-50 flex items-center justify-center p-6">
+            <svg viewBox="0 0 320 180" class="w-full h-full max-w-[260px]" fill="none" aria-hidden="true">
+              <line x1="60" y1="154" x2="260" y2="154" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"/>
+              <path d="M160 154 L160 72 M160 112 L124 84 M160 98 L198 72 M160 78 L138 46 M160 78 L182 46" stroke="#1E293B" stroke-width="4" stroke-dasharray="4 4" stroke-linecap="round" stroke-linejoin="round"/>
+              <polygon points="160,22 122,74 198,74" stroke="#0F172A" stroke-width="1.5" stroke-dasharray="4 3" fill="#0F172A" fill-opacity="0.12"/>
+              <polygon points="124,62 96,100 152,100" stroke="#334155" stroke-width="1.5" stroke-dasharray="4 3" fill="#334155" fill-opacity="0.12"/>
+              <polygon points="196,58 168,96 224,96" stroke="#334155" stroke-width="1.5" stroke-dasharray="4 3" fill="#334155" fill-opacity="0.12"/>
+              <line x1="238" y1="26" x2="238" y2="154" stroke="#EA580C" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <text x="245" y="94" fill="#EA580C" font-size="11" font-weight="700">6 ft</text>
+            </svg>
+          </div>
+        `;
+      }
+      if (type === 'ipod') {
+        return `
+          <div class="w-full h-full bg-gradient-to-br from-rose-50 via-slate-50 to-indigo-50 flex items-center justify-center p-6">
+            <svg viewBox="0 0 320 180" class="w-full h-full max-w-[260px]" fill="none" aria-hidden="true">
+              <rect x="118" y="20" width="84" height="140" rx="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.5"/>
+              <rect x="128" y="32" width="64" height="46" rx="4" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.5"/>
+              <path d="M138 60 Q 148 44, 158 60 T 178 60" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="160" cy="118" r="28" fill="#F1F5F9" stroke="#334155" stroke-width="2"/>
+              <circle cx="160" cy="118" r="10" fill="#FFFFFF" stroke="#334155" stroke-width="1.5"/>
+              <path d="M72 64 H102 M72 90 H102 M72 116 H102" stroke="#EA580C" stroke-width="1.5" stroke-dasharray="3 3"/>
+              <circle cx="228" cy="54" r="10" stroke="#4F46E5" stroke-width="1.5" stroke-dasharray="3 3"/>
+            </svg>
+          </div>
+        `;
+      }
+      return `
+        <div class="w-full h-full bg-gradient-to-br from-teal-50 via-slate-50 to-amber-50 flex items-center justify-center p-6">
+          <svg viewBox="0 0 320 180" class="w-full h-full max-w-[260px]" fill="none" aria-hidden="true">
+            <rect x="70" y="54" width="180" height="16" rx="3" fill="#0F172A"/>
+            <path d="M90 70 L90 144 M230 70 L230 144 M90 102 L230 102" stroke="#334155" stroke-width="6" stroke-linecap="round"/>
+            <path d="M90 70 L114 102 M230 70 L206 102" stroke="#EA580C" stroke-width="2" stroke-dasharray="4 3"/>
+            <line x1="70" y1="38" x2="250" y2="38" stroke="#2563EB" stroke-width="1.5"/>
+            <circle cx="70" cy="38" r="3" fill="#2563EB"/>
+            <circle cx="250" cy="38" r="3" fill="#2563EB"/>
+          </svg>
+        </div>
+      `;
+    }
+
+    function renderProjects() {
+      projectsGrid.innerHTML = projects.map((project) => `
+        <article
+          data-project-id="${project.id}"
+          tabindex="0"
+          role="button"
+          aria-label="Open technical specs for ${project.title}"
+          class="project-card group cursor-pointer bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-blue-300 transition-all flex flex-col"
+        >
+          <div class="h-48 bg-slate-100 overflow-hidden border-b border-slate-100">
+            ${renderProjectVisual(project.visualType)}
+          </div>
+          <div class="p-5 sm:p-6 flex-1 flex flex-col">
+            <div class="flex items-center justify-between gap-2 mb-2.5">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-blue-600">${project.category}</span>
+              <span class="text-[11px] font-medium px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">${project.status}</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">${project.title}</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">${project.summary}</p>
+            <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-blue-600">
+              <span>View Technical Specs</span>
+              <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+            </div>
+          </div>
+        </article>
+      `).join('');
+
+      document.querySelectorAll('.project-card').forEach((card) => {
+        card.addEventListener('click', () => openProjectModal(card.dataset.projectId));
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openProjectModal(card.dataset.projectId);
+          }
+        });
+      });
+    }
+
+    function openProjectModal(projectId) {
+      const project = projects.find((p) => p.id === projectId);
+      if (!project) return;
+
+      modalMedia.innerHTML = renderProjectVisual(project.visualType);
+      modalCategory.textContent = project.category;
+      modalStatus.textContent = project.status;
+      modalTitle.textContent = project.title;
+      modalDescription.textContent = project.details;
+
+      modalSpecs.innerHTML = project.specs.map((spec) => `
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+          <div class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">${spec.label}</div>
+          <div class="text-sm font-semibold text-slate-900 mt-1">${spec.value}</div>
+        </div>
+      `).join('');
+
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      lucide.createIcons();
+    }
+
+    function closeProjectModal() {
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function renderSkillFilters() {
+      skillFiltersEl.innerHTML = categories.map((cat) => {
+        const isActive = cat === activeCategory;
+        return `
+          <button
+            type="button"
+            data-category="${cat}"
+            role="tab"
+            aria-selected="${isActive}"
+            class="skill-filter-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+              isActive
+                ? 'bg-blue-600 text-white shadow-sm'
+                : 'bg-white text-slate-600 border border-slate-200 hover:border-blue-300 hover:text-blue-600'
+            }"
+          >
+            ${cat}
+          </button>
+        `;
+      }).join('');
+
+      document.querySelectorAll('.skill-filter-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          activeCategory = btn.dataset.category;
+          renderSkillFilters();
+          renderSkills();
+        });
+      });
+    }
+
+    function renderSkills() {
+      const filtered = activeCategory === 'All'
+        ? skills
+        : skills.filter((s) => s.category === activeCategory);
+
+      skillsCount.textContent = `Showing ${filtered.length} of ${skills.length} skills`;
+
+      const accentMap = {
+        blue: 'bg-blue-50 text-blue-600',
+        amber: 'bg-amber-50 text-amber-600',
+        emerald: 'bg-emerald-50 text-emerald-600',
+        indigo: 'bg-indigo-50 text-indigo-600',
+        rose: 'bg-rose-50 text-rose-600'
+      };
+
+      skillsGrid.innerHTML = filtered.map((skill) => `
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-300 transition-all">
+          <div class="flex items-start justify-between gap-3">
+            <div class="w-10 h-10 rounded-xl ${accentMap[skill.accent] || accentMap.blue} flex items-center justify-center shrink-0">
+              <i data-lucide="${skill.icon}" class="w-5 h-5"></i>
+            </div>
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-slate-100 text-slate-700">${skill.level}</span>
+          </div>
+          <h3 class="mt-4 font-bold text-slate-900 text-base">${skill.name}</h3>
+          <p class="mt-1.5 text-sm text-slate-600 leading-relaxed">${skill.description}</p>
+        </div>
+      `).join('');
+
+      lucide.createIcons();
+    }
+
+    // Copy Contact Details with Clipboard + execCommand fallback
+    const copyBtn = document.getElementById('copy-contact-btn');
+    const copyLabel = document.getElementById('copy-btn-label');
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toast-message');
+    let toastTimer = null;
+
+    function showToast(message) {
+      toastMsg.textContent = message;
+      toast.classList.remove('hidden');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 2800);
+    }
+
+    function fallbackCopy(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+      } finally {
+        document.body.removeChild(ta);
+      }
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const contactText = 'Arya Tandon | Mechanical Engineering, Manav Rachna University | Email: aryatandon680@gmail.com';
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(contactText);
+        } else {
+          fallbackCopy(contactText);
+        }
+      } catch (err) {
+        fallbackCopy(contactText);
+      }
+      copyLabel.textContent = 'Copied!';
+      showToast('Contact details copied to clipboard!');
+      setTimeout(() => {
+        copyLabel.textContent = 'Copy Contact Details';
+      }, 2200);
+    });
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Modal close events
+    document.getElementById('modal-close-btn').addEventListener('click', closeProjectModal);
+    document.getElementById('modal-done-btn').addEventListener('click', closeProjectModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeProjectModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeProjectModal();
+      }
+    });
+
+    // Init
+    document.getElementById('year').textContent = new Date().getFullYear();
+    renderProjects();
+    renderSkillFilters();
+    renderSkills();
+    lucide.createIcons();
+  </script>
+</body>
+</html>
